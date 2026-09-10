@@ -1,5 +1,7 @@
 # Dev-Ops-10.5 CI/CD Platform
 
+![Hybrid Operational Validation Architecture](diagrams/Hybrid-Operational-Validation-Architecture.png)
+
 ## Overview
 
 ### From Manual Builds to Automated Delivery
@@ -41,8 +43,7 @@ Dev-Ops-10.5
 
         ↓
 
-Application Delivery
-
+Application Delivery & Operational Validation
 
 ## Project Origin
 
@@ -77,11 +78,20 @@ Current Status: Operational
 - RBAC Configuration
 - Kubernetes Agent Templates
 
+### Phase 4 Complete
+
+- Static Agent Pipeline Validation
+- Dynamic Kubernetes Agent Validation
+- Operational Workload Validation
+- Weather Platform Validation
+- Hybrid Infrastructure Validation
+- Azure Disaster Recovery Validation
+
 ### Next Phase
 
-- Traditional Agent Pipeline Validation
-- Kubernetes Agent Pipeline Validation
-- Dynamic Build Execution
+- Screenshots Documentation
+- Architecture Diagrams
+- Documentation Finalization
 
 ## Objectives
 
@@ -134,6 +144,12 @@ Current Status: Operational
 
 - Groovy
 - Bash
+- YAML
+
+### Cloud Services
+
+- Microsoft Azure
+- Azure Virtual Machines
 
 ### Container Platform
 
@@ -271,6 +287,64 @@ Jenkins Controller
 ↓
 Pipeline Execution
 
+The platform supports multiple build execution strategies depending on workload requirements.
+
+#### Controller Execution
+
+Builds execute directly on the Jenkins controller using available executors.
+
+Typical use cases:
+
+- Validation Jobs
+- Lightweight Automation
+- Administrative Tasks
+
+#### Static Agent Execution
+
+Builds execute on a dedicated Linux-based worker node.
+
+Typical use cases:
+
+- Infrastructure Automation
+- Ansible
+- Terraform
+- Administrative Operations
+
+Architecture:
+
+GitHub
+↓
+Jenkins Controller
+↓
+Static Agent
+↓
+Pipeline Execution
+
+#### Dynamic Kubernetes Agent Execution
+
+Builds execute on dynamically provisioned Kubernetes workloads created on demand.
+
+Typical use cases:
+
+- CI/CD Workloads
+- Application Builds
+- Testing Pipelines
+- Disposable Build Environments
+
+Architecture:
+
+GitHub
+↓
+Jenkins Controller
+↓
+Kubernetes Cloud
+↓
+Dynamic Agent Pod
+↓
+Pipeline Execution
+↓
+Automatic Cleanup
+
 ### Future Architecture
 
 GitHub
@@ -287,23 +361,97 @@ Deployment Automation
 ↓
 Application Delivery
 
+## Platform Capabilities
+
+The platform provides a Kubernetes-hosted CI/CD environment designed for source control integration, automated build execution, pipeline orchestration, and future software delivery workflows.
+
+Validated platform capabilities include:
+
+- Jenkins Controller Operations
+- GitHub Source Control Integration
+- Pipeline-as-Code Workflows
+- Static Agent Execution
+- Dynamic Kubernetes Agent Execution
+- Kubernetes Cloud Integration
+- Automated Agent Provisioning
+- Credential Management
+- Build History Management
+- Pipeline Visualization
+- Workspace Management
+- Multi-Agent Build Architecture
+- Operational Workload Validation
+- Platform Health Verification
+- Hybrid Infrastructure Validation
+- Disaster Recovery Validation
+- Automated Service Availability Testing
+- Load Balancer Validation
+- Application Availability Validation
+- Hybrid Cloud Connectivity Validation
+- Operational Automation Workflows
+## Operational Platform Validation
+
+The CI/CD platform was validated using the Solis Weather Platform, a multi-node application platform consisting of load-balanced application services, hybrid infrastructure resources, and cloud-hosted disaster recovery capabilities.
+
+Rather than limiting validation to synthetic demonstration jobs, Jenkins was used to execute automated operational validation workflows against a real application platform.
+
+### Validation Architecture
+
+Jenkins Controller
+↓
+Static Jenkins Agent
+↓
+Operational Validation Pipeline
+↓
+NGINX Load Balancer
+↓
+Weather Application Platform
+├── Weather Node A
+├── Weather Node B
+└── Azure Disaster Recovery Node
+
+### Validated Components
+
+✅ Weather Application Node A Availability
+
+✅ Weather Application Node B Availability
+
+✅ NGINX Load Balancer Availability
+
+✅ Azure Disaster Recovery Node Availability
+
+✅ WireGuard Connectivity Validation
+
+✅ End-to-End Application Availability
+
+✅ Automated Platform Health Reporting
+
+✅ Static Jenkins Agent Pipeline Execution
+
+### Operational Outcome
+
+The CI/CD platform successfully demonstrated automated operational validation capabilities across application services, load-balancing infrastructure, hybrid connectivity, and cloud-hosted disaster recovery resources.
+
+This validation established the platform's ability to perform repeatable operational health verification workflows against distributed application services.
+
 ## Validation
 
 ### Validation Summary
 
-✅ Jenkins Deployment
+✅ Jenkins Controller Deployment
 
-✅ Persistent SMB Storage
+✅ Kubernetes-Hosted CI/CD Platform
 
-✅ HTTPS Access
+✅ Persistent SMB CSI Storage Integration
 
-✅ GitHub Integration
+✅ HTTPS Platform Access
 
-✅ GitHub Authentication
+✅ GitHub Repository Integration
 
-✅ Repository Checkout
+✅ Secure Source Control Authentication
 
-✅ Pipeline-as-Code
+✅ Repository Checkout and Workspace Management
+
+✅ Pipeline-as-Code Implementation
 
 ✅ Multi-Stage Pipeline Execution
 
@@ -311,9 +459,23 @@ Application Delivery
 
 ✅ Automated Build Triggering
 
-✅ Traditional Agent Connectivity
+✅ Static Agent Execution
 
-✅ Kubernetes Cloud Connectivity
+✅ Dynamic Kubernetes Agent Execution
+
+✅ Kubernetes Cloud Integration
+
+✅ Automated Agent Provisioning
+
+✅ Kubernetes-Based Build Execution
+
+✅ Credential Management
+
+✅ Build History Management
+
+✅ Pipeline Visualization
+
+✅ Multi-Agent Build Architecture
 
 ### Jenkins Platform Validation
 
@@ -350,47 +512,55 @@ Application Delivery
 
 ### Agent Validation
 
-#### Traditional Agent
+#### Static Agent Architecture
 
 - SSH connectivity validated.
 - Agent registration validated.
 - Workspace validation completed.
 - Agent communication validated.
 - Agent online status confirmed.
+- Pipeline execution 
 
-#### Kubernetes Cloud
+#### Dynamic Kubernetes Agent Architecture
 
-- Service Account validated.
-- RBAC validated.
+- ServiceAccount integration validated.
+- RBAC authorization validated.
 - Cloud connectivity validated.
 - Kubernetes Cloud registration validated.
-- Agent template created.
+- Agent template configuration validated.
+- Dynamic agent provisioning validated.
+- Automated agent cleanup validated.
+- Kubernetes-based pipeline execution validated.
 
 ### Outcome
 
-The platform successfully demonstrated end-to-end CI/CD workflow capabilities including source control integration, automated build triggering, multi-stage pipeline execution, agent-based execution, and Pipeline-as-Code practices.
+The platform successfully demonstrated end-to-end CI/CD functionality including source control integration, automated build triggering, Pipeline-as-Code workflows, static agent execution, dynamic Kubernetes agent execution, and Kubernetes-native build orchestration.
 
 ## Screenshots
 
-### Jenkins Deployment
+### Operational Validation Project
 
-### Jenkins HTTPS Access
+![Operational Validation Project](screenshots/06-Operational-Validation-Project.png)
 
-### GitHub Integration
+Weather DR Validation pipeline providing automated operational validation across application services, load balancing infrastructure, and Azure-hosted disaster recovery resources.
 
-### Pipeline Success
+### Operational Validation Success
 
-### Poll SCM Validation
+![Operational Validation Success](screenshots/07-Operational-Validation-Success.png)
 
-### Automated Build Trigger
+Operational validation pipeline successfully verified Weather Node A, Weather Node B, Azure disaster recovery services, and load-balancer health.
 
-### Traditional Agent Connected
+### Hybrid Infrastructure Validation
 
-### Kubernetes Cloud Connected
+![Hybrid Infrastructure Validation](screenshots/08-Hybrid-Infrastructure-Validation.png)
 
-## Lessons Learned
+Hybrid infrastructure validation confirming cloud connectivity, disaster recovery service availability, and load-balanced application health.
 
-### Jenkins Mental Model
+### Jenkins Workload Hosting
+
+![Jenkins Workload Hosting](screenshots/09-Jenkins-Workload-Hosting.png)
+
+Jenkins controller successfully hosted and operated as a Kubernetes workload using SMB CSI-backed persistent storage.
 
 ```text
 Storage
@@ -413,7 +583,7 @@ Kubernetes
 =
 Property Manager
 
-### Key Lessons
+### Operational Insights
 
 - Persistent storage design can directly impact CI/CD platform behavior.
 - SMB-backed storage introduced OpenSSH temporary key permission challenges when using GitHub Deploy Keys.
@@ -440,6 +610,14 @@ Property Manager
 - Implemented traditional Jenkins agent architecture.
 - Integrated Kubernetes Cloud functionality.
 - Established a CI/CD foundation for future Kubernetes deployment automation.
+- Validated static Jenkins agent execution architecture.
+- Validated dynamic Kubernetes agent execution architecture.
+- Implemented operational workload validation pipelines.
+- Automated validation of a hybrid application platform.
+- Validated load-balanced service availability.
+- Validated cloud-hosted disaster recovery services.
+- Validated WireGuard-connected hybrid infrastructure.
+- Established automated platform health verification workflows.
 
 ## Example Pipeline
 
@@ -565,13 +743,12 @@ dev-ops-10-5-ci-cd-platform/
 
 ### In Progress
 
-- Dedicated Agent Validation Pipelines
-- Kubernetes Agent Validation Pipelines
-- Dynamic Build Execution Testing
+- Documentation Finalization
+- Screenshots
+- Architecture Diagrams
 
 ### Planned
 
-- Dynamic Kubernetes Agent Builds
 - Container Image Build Automation
 - Artifact Repository Integration
 - Automated Testing Pipelines
@@ -593,6 +770,10 @@ dev-ops-10-5-ci-cd-platform/
 - Traditional infrastructure-focused build agent
 - Kubernetes dynamic agent architecture
 - Internal-only CI/CD platform design
+- Static and dynamic agent execution model
+- Operational workload validation strategy
+- Hybrid infrastructure validation architecture
+- Real-platform validation approach over synthetic test workloads
 
 ## Future Enhancements
 
