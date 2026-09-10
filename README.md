@@ -30,8 +30,7 @@ Application Delivery
 
 Dev-Ops-10 provides the infrastructure foundation while Dev-Ops-10.5 provides the automation and delivery layer.
 
-### Platform Relationship
-
+### Platform Relationship 
 ```text
 Dev-Ops-10
 (Kubernetes Platform Engineering)
@@ -44,7 +43,7 @@ Dev-Ops-10.5
         ↓
 
 Application Delivery & Operational Validation
-
+```
 ## Project Origin
 
 This project originated from the need to build a dedicated CI/CD environment capable of integrating source control, automation workflows, and future Kubernetes deployment pipelines.
@@ -562,26 +561,17 @@ Hybrid infrastructure validation confirming cloud connectivity, disaster recover
 
 Jenkins controller successfully hosted and operated as a Kubernetes workload using SMB CSI-backed persistent storage.
 
+## Architectural Observations
+
+### Jenkins Platform Architecture
+
 ```text
-Storage
-=
-Warehouse
-
-Executors
-=
-Workbenches
-
-Agents
-=
-Workers
-
-Jenkins
-=
-Factory Manager
-
-Kubernetes
-=
-Property Manager
+Storage = Warehouse
+Executors = Workbenches
+Agents = Workers
+Jenkins = Factory Manager
+Kubernetes = Property Manager
+```
 
 ### Operational Insights
 
